@@ -5,349 +5,134 @@ next: history
 prev: preface
 ...
 
-I---this is Chris speaking---have known the web[^theweb] for all of my
-adult life. The web for me is something of a technological companion,
-and I’ve never been far from it in my studies or my work. Perhaps it's
-been the same for you. And using the web means using a browser. I
-hope, as you read this book, that you fall in love with web browsers,
-just like I did.
+저는—Chris입니다—성인이 된 이후로 줄곧 웹을 알고 지냈습니다[^theweb]. 웹은 제게 일종의 기술적 동반자였고, 공부나 일을 하면서 늘 가까이 있었죠. 아마 여러분도 비슷한 경험을 하셨을 겁니다. 그리고 웹을 사용한다는 것은 곧 브라우저를 사용한다는 뜻입니다. 이 책을 읽으시면서 여러분도 저처럼 웹 브라우저에 빠져들기를 바랍니다.
 
-The Browser and Me
+브라우저와 나
 ==================
 
-Since I first encountered the web and its predecessors,[^bbs] in the
-early 1990s, I've been fascinated by browsers and the concept of networked user
-interfaces. When I [surfed][websurfing] the web, even in its earliest form, I
-felt I was seeing the future of computing. In some ways, the web and I grew
-together---for example, 1994, the year the web went commercial, was the same
-year I started college; while there I spent a fair amount of time
-surfing the web,
-and by the time I graduated in 1999, the browser had fueled the famous dot-com
-speculation gold rush. Not only that, but the company for which I now work,
-Google, is a child of the web and was founded during that time. 
+1990년대 초 웹과 그 선구자들을 처음 접했을 때부터[^bbs], 저는 브라우저와 네트워크 기반 사용자 인터페이스라는 개념에 매료되었습니다. [웹을 서핑][websurfing]할 때도 컴퓨팅의 미래를 보고 있다는 느낌이 들었죠. 어떤 면에서 웹과 저는 함께 성장했습니다—예를 들어, 웹이 상업화된 1994년은 제가 대학에 입학한 해이기도 했고, 저는 거기서 꽤 많은 시간을 웹 서핑하면서 보냈으며, 1999년 졸업할 때쯤에는 브라우저가 유명한 닷컴 투기 붐을 일으켰습니다. 게다가 제가 현재 일하고 있는 Google은 웹의 자식이고 그 시기에 설립되었습니다.
 
-[^theweb]: Broadly defined, the web is the interlinked network (“web”)
-of [web pages](https://en.wikipedia.org/wiki/Web_page) on the
-internet. If you've never made a web page, I recommend MDN's [Learn
-Web Development][learn-web] series, especially the [Getting
-Started][learn-basics] guide. This book will be easier to read if
-you're familiar with the core technologies.
-    
+대학 1학년 때 RedHat 영업사원의 발표를 들은 적이 있습니다. 물론 발표는 RedHat Linux를 판매하는 것이 목적이었고, 아마도 "미래의 운영체제"라고 부르면서 "Linux 데스크톱의 해"에 대해 추측했을 것입니다. 하지만 RedHat이 직면한 과제에 대해 질문을 받았을 때, 그는 Linux가 아닌 _웹_에 대해 언급했습니다: "Linux용 좋은 브라우저를 만들어야 한다"고 말했죠[^netscape-linux]. 웹의 초기 시절에도 브라우저는 이미 모든 컴퓨터의 필수 구성 요소였습니다. 그는 심지어 "더 나은 브라우저를 만드는 게 얼마나 어려울까?"라는 도전을 던졌습니다. 정말, 얼마나 어려울까요? 무엇이 그렇게 어렵게 만드는 걸까요? 그 질문은 오랫동안 제 머릿속에 남아있었습니다[^meantime-linux].
+
+역사 속의 웹
+==================
+
+웹은 거대하고 미친 실험입니다. 요즘에는 웹에서 동영상을 보고, 뉴스를 읽고, 친구들과 소통하는 것이 자연스럽습니다. 그래서 웹이 단순하고 당연한 것처럼, 이미 완성된 것처럼 보일 수 있습니다. 하지만 웹은 단순하지도, 당연하지도 않습니다(그리고 확실히 완성된 것도 아닙니다). 웹은 사람들이 서로 연결되고 배울 수 있도록 돕기 위한 실험과 연구의 결과물로, 그 역사는 거의 컴퓨팅의 시작까지 거슬러 올라갑니다[^precursors].
+
+초기에 인터넷은 주로 대학, 연구소, 대기업에 있는 컴퓨터들이 물리적 케이블로 연결되어 애플리케이션별 프로토콜로 통신하는 전 세계적 네트워크였습니다. (매우) 초기 웹은 대부분 이 기초 위에 구축되었습니다. 웹 페이지는 특정 컴퓨터에 저장된 특정 형식의 파일이었습니다. 웹 페이지의 주소는 컴퓨터와 파일을 지정했고, 초기 서버는 디스크에서 파일을 읽는 것 말고는 거의 아무것도 하지 않았습니다. 웹의 논리적 구조는 물리적 구조를 반영했습니다.
+
+많은 것이 변했습니다. 웹 페이지를 위한 하이퍼텍스트 마크업 언어(HTML)는 이제 보통 실시간으로 동적으로 조립되어[^server-side-rendering] 브라우저로 전송됩니다. 조립되는 조각들은 그 자체로 동적 콘텐츠—뉴스, 받은 편지함 내용, 당신의 특정한 취향에 맞춰진 광고—로 채워져 있습니다. 주소조차도 더 이상 특정 컴퓨터를 식별하지 않습니다—콘텐츠 전송 네트워크가 전 세계에 있는 수천 대의 컴퓨터 중 어느 것으로든 요청을 라우팅합니다. 더 높은 수준에서 보면, 대부분의 웹 페이지는 누군가의 홈 컴퓨터가 아닌[^self-hosted] 대기업의 소셜 미디어 플랫폼이나 클라우드 컴퓨팅 서비스에서 제공됩니다.
+
+[^theweb]: 넓게 정의하면, 웹은 인터넷상의 [웹 페이지](https://en.wikipedia.org/wiki/Web_page)들이 서로 연결된 네트워크("웹")입니다. 웹 페이지를 만들어본 적이 없다면, MDN의 [웹 개발 학습][learn-web] 시리즈, 특히 [시작하기][learn-basics] 가이드를 추천합니다. 이 책은 핵심 기술에 익숙하다면 더 쉽게 읽을 수 있을 것입니다.
+
+[^bbs]: 제 경우에는 [전자 게시판 시스템 (BBS)](https://en.wikipedia.org/wiki/Bulletin_board_system)을 전화 모뎀으로 연결해 사용했습니다. BBS는 브라우저처럼 인터넷의 다른 곳에 있는 동적 콘텐츠를 보여주는 창입니다.
+
+[^precursors]: 그리고 웹은 또한 풍부한 컴퓨터 디스플레이, 강력한 사용자 인터페이스 구축 라이브러리, 빠른 네트워크, 충분한 컴퓨팅 파워와 정보 저장 용량이 필요했습니다. 기술에서 자주 그렇듯이, 웹에는 많은 유사한 선구자가 있었지만, 모든 요소가 함께 모였을 때만 현대적인 형태를 갖추게 되었습니다.
+
+[^server-side-rendering]: "서버 사이드 렌더링"은 웹 페이지를 로드할 때 서버에서 HTML을 조립하는 과정입니다. 서버 사이드 렌더링은 JavaScript와 심지어 [헤드리스 브라우저](https://en.wikipedia.org/wiki/Headless_browser)와 같은 웹 기술을 사용할 수 있습니다. 브라우저가 점령하는 또 하나의 영역입니다!
+
+[^self-hosted]: 사람들이 실제로 이렇게 했습니다! 그리고 그들의 웹사이트가 인기를 얻으면, 종종 대역폭이나 컴퓨팅 파워가 부족해져서 접근할 수 없게 되었습니다.
+
+[^netscape-linux]: 당시 Netscape Navigator가 Linux용으로 제공되었지만, 다른 운영체제에 비해 속도나 기능면에서 특별히 뛰어나다고 여겨지지는 않았습니다.
+
+[^meantime-linux]: 한편, "Netscape보다 나은 Linux 브라우저"는 오랜 시간이 걸렸습니다...
+
+[websurfing]: https://www.pcmag.com/encyclopedia/term/web-surfing
 [learn-web]: https://developer.mozilla.org/en-US/docs/Learn
 [learn-basics]: https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web
 
-[websurfing]: https://www.pcmag.com/encyclopedia/term/web-surfing
+많은 것이 변했지만, 일부는 그대로 남아있습니다. 웹의 핵심 구성 요소들입니다:
 
-[^bbs]: For me, [bulletin board systems (BBSs)](https://en.wikipedia.org/wiki/Bulletin_board_system)
-over a dial-up modem connection. A BBS, like a browser, is a
-window into dynamic content somewhere else on the internet.
+* 웹은 하이퍼링크로 연결된 정보 네트워크입니다.
+* 사용자는 브라우저라고 불리는 사용자 에이전트를 통해 웹을 탐색합니다.
+* 정보는 HTTP(HyperText Transfer Protocol)로 요청되고 HTML 문서 형식으로 구조화됩니다.
+* 문서는 내용이 아닌 URL(Uniform Resource Locator)로 식별되며 동적으로 생성될 수 있습니다.
+* 웹 페이지는 이미지, 동영상, CSS(Cascading Style Sheets), JavaScript 등 다양한 형식의 보조 자산을 링크할 수 있습니다.
+* 이 모든 구성 요소는 개방되어 있고, 표준화되어 있으며, 자유롭게 사용하거나 재사용할 수 있습니다.
 
-In my freshman year at college, I attended a presentation by a RedHat salesman.
-The presentation was of course aimed at selling RedHat Linux, probably calling
-it the "operating system of the future" and speculating about the "year of the
-Linux desktop". But when asked about challenges RedHat faced, the salesman
-mentioned not Linux but _the web_: he said that someone "needs to make a good
-browser for Linux".[^netscape-linux] Even back then, in the first
-years of the web, the browser was already a necessary component
-of every computer.
-He even threw out a challenge: "How hard could it be to build a better browser?"
-Indeed, how hard could it be? What makes it so hard? That question stuck with me
-for a long time.[^meantime-linux]
+철학적으로 보면, 아마도 이러한 원칙들 중 하나나 다른 것은 부차적일 수 있습니다. 웹의 네트워킹과 렌더링 측면을 구분하려 할 수도 있습니다. 링크와 네트워킹을 특정 프로토콜과 데이터 형식의 선택에서 추상화할 수도 있습니다. 브라우저가 이론적으로 필요한지 물을 수도 있고, HTTP, URL, 하이퍼링크만이 웹의 진정한 필수 요소라고 주장할 수도 있습니다.
 
-[^netscape-linux]: Netscape Navigator was available for Linux at that time, but
-it wasn’t viewed as especially fast or featureful compared to its implementation
-on other operating systems.
+아마도[^perhaps]. 웹은 결국 실험입니다; 핵심 기술은 진화하고 성장합니다. 하지만 웹은 우연이 아닙니다; 그 원래 설계는 컴퓨팅뿐만 아니라 인간이 어떻게 연결되고 상호작용할 수 있는지에 대한 진실을 반영합니다. 웹은 호스팅과 콘텐츠의 가상화 동안 생존했을 뿐만 아니라 번창했는데, 이는 특히 이 원래 설계의 우아함과 효과성 덕분입니다.
 
-[^meantime-linux]: Meanwhile, the "better Linux browser than Netscape" took a
-long time to appear...
+[^perhaps]: 실제로 구현 선택 중 하나 이상이 대체될 수 있고, 시간이 지나면서 그렇게 될 수도 있다는 것은 사실입니다. 예를 들어, JavaScript는 결국 다른 언어나 기술로, HTTP는 다른 프로토콜로, HTML은 후계자로 대체될 수 있습니다. 하지만 웹은 여전히 웹일 것입니다. 왜냐하면 어떤 후속 형식도 반드시 기능의 *상위집합*을 지원하고, 동일한 근본적인 구조를 가질 것이기 때문입니다.
 
-How hard indeed! After eleven years in the trenches working on Chrome, I now
-know the answer to his question: building a browser is both easy and incredibly
-hard, both intentional and accidental. And everywhere you look, you see the
-evolution and history of the web wrapped up in one codebase. It's fun and
-endlessly interesting.
+이해해야 할 핵심은 이 거대한 실험이 아직 끝나지 않았다는 것입니다. 웹의 본질은 유지될 것이지만, 웹 브라우저를 만듦으로써 여러분은 그 미래를 형성할 기회를 갖게 됩니다.
 
-So that's how I fell in love with web browsers. Now let me tell you why you
-will, too.
-
-The Web in History
-==================
-
-The web is a grand, crazy experiment. It's natural, nowadays, to watch videos,
-read news, and connect with friends on the web. That can make the web seem
-simple and obvious, finished, already built. But the web is neither simple nor
-obvious (and is certainly not finished). It is the result of experiments and
-research, reaching back to nearly the beginning of computing,[^precursors] about
-how to help people connect and learn from each other.
-
-[^precursors]: And the web _also_ needed rich computer displays, powerful
-user-interface-building libraries, fast networks, and sufficient computing power and information
-storage capacity. As so often happens with technology, the web had many similar
-predecessors, but only took its modern form once all the pieces came together.
-
-In the early days, the internet was a world-wide network of computers, largely
-at universities, labs, and major corporations, linked by physical cables and
-communicating over application-specific protocols. The (very) early web mostly
-built on this foundation. Web pages were files in a specific format stored on
-specific computers. The addresses for web pages named the computer and the file, and
-early servers did little besides read files from a disk. The logical structure
-of the web mirrored its physical structure.
-
-A lot has changed. The HyperText Markup Language (HTML) for web pages
-is now usually dynamically assembled on the
-fly[^server-side-rendering] and sent on demand to your browser. The pieces being
-assembled are themselves filled with dynamic content---news, inbox contents, and
-advertisements adjusted to your particular tastes. Even the addresses no longer identify
-a specific computer---content distribution networks route requests to any of
-thousands of computers all around the world. At a higher level, most web pages
-are served not from someone's home computer[^self-hosted] but from a
-major corporation's social media platform or cloud computing service.
-
-[^server-side-rendering]: "Server-side rendering" is the process of assembling
-HTML on the server when loading a web page. Server-side rendering can use web
-technologies like JavaScript and even [headless
-browsers](https://en.wikipedia.org/wiki/Headless_browser). Yet one more place
-browsers are taking over!
-
-[^self-hosted]: People actually did this! And when their website became popular,
-it often ran out of bandwidth or computing power and became inaccessible.
-
-With all that's changed, some things have stayed the same, the core building
-blocks that are the essence of the web:
-
-* The web is a _network of information_
-  linked by _hyperlinks_.
-* The user uses a _user agent_, called a _browser_, to navigate the web.
-* Information is requested with the _HyperText Transfer Protocol (HTTP)_
-  and structured with the _HTML document format_.
-* Documents are identified by Uniform Resource Locators (URLs),
-  _not_ by their content, and may be dynamically generated.
-* Web pages can link to auxiliary assets in different formats,
-  including images, videos, Cascading Style Sheets (CSS), and JavaScript.
-* All these building blocks are open, standardized, and free to use or reuse.
-
-As a philosophical matter, perhaps one or another of these principles is
-secondary. One could try to distinguish between the networking and rendering
-aspects of the web. One could abstract linking and networking from the
-particular choice of protocol and data format. One could ask whether the browser
-is necessary in theory, or argue that HTTP, URLs, and hyperlinking are the only
-truly essential parts of the web.
-
-Perhaps.[^perhaps] The web is, after all, an experiment; the core technologies
-evolve and grow. But the web is not an accident; its original design reflects
-truths not just about computing, but about how human beings can connect and
-interact. The web not only survived but thrived during the virtualization of
-hosting and content, specifically due to the elegance and effectiveness of
-this original design.
-
-[^perhaps]: It is indeed true that one or more of the implementation choices
-could be replaced, and perhaps that will happen over time. For example,
-JavaScript might eventually be replaced by another language or technology, HTTP
-by some other protocol, or HTML by a successor. Yet the web will stay the web,
-because any successor format is sure to support a *superset* of functionality,
-and have the same fundamental structure.
-
-The key thing to understand is that this grand experiment is not over.
-The essence of the web will stay, but by building web browsers you have the
-chance to shape its future.
-
-Real Browser Codebases
+실제 브라우저 코드베이스
 ======================
 
-So let me tell you what it's like to contribute to a browser. Some time during
-my first few months of working on Chrome, I came across the code implementing
-the[`<br>`][br-tag] tag---look at that, the good old `<br>` tag, which I’ve
-used many times to insert newlines into web pages! And the implementation turns
-out to be barely any code at all, both in Chrome and in this book's simple
-browser.
+Chrome에서 일하기 시작한 지 몇 달 후, [`<br>`][br-tag] 태그를 구현하는 코드를 발견했습니다—봐요, 웹 페이지에 줄바꿈을 삽입하는 데 자주 사용했던 그 좋은 `<br>` 태그입니다! 그리고 그 구현은 Chrome에서도, 이 책의 간단한 브라우저에서도 거의 코드가 없습니다.
 
 [br-tag]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/br
 
-But Chrome as a whole---its features, speed, security, reliability---_wow_.
-_Thousands_ of person-years went into it. There is constant pressure to do
-more---to add more features, to improve performance, to keep up with the "web
-ecosystem"---for the thousands of businesses, millions of
-developers,[^developers] and billions of users on the web.
+하지만 Chrome 전체를 보면—그 기능, 속도, 보안, 안정성—_와우_. _수천_ 인년이 투자되었습니다. 더 많은 것을 하라는 지속적인 압박이 있습니다—더 많은 기능을 추가하고, 성능을 개선하고, "웹 생태계"를 따라잡아야 합니다—웹의 수천 개의 기업, 수백만 명의 개발자[^developers], 수십억 명의 사용자를 위해서입니다.
 
-[^developers]: I usually prefer “engineer”---hence the title of this book---but
-“developer” or “web developer” is much more common on the web. One important
-reason is that anyone can build a web page---not just trained software engineers
-and computer scientists. “Web developer” also is more inclusive of additional,
-critical roles like designers, authors, editors, and photographers. A web
-developer is anyone who makes web pages, regardless of how.
+[^developers]: 저는 보통 "엔지니어"를 선호합니다—따라서 이 책의 제목도 그렇습니다—하지만 웹에서는 "개발자" 또는 "웹 개발자"가 훨씬 더 일반적입니다. 한 가지 중요한 이유는 누구나 웹 페이지를 만들 수 있다는 것입니다—훈련받은 소프트웨어 엔지니어와 컴퓨터 과학자만이 아닙니다. "웹 개발자"는 또한 디자이너, 작가, 편집자, 사진작가와 같은 추가적인 중요한 역할을 더 포괄합니다. 웹 개발자는 어떻게 하든 웹 페이지를 만드는 사람입니다.
 
-Working on such a codebase can feel daunting. I often find lines of code last
-touched 15 years ago by someone I've never met; or even now discover files and
-classes that I never knew existed; or see lines of code that don’t look necessary,
-yet turn out to be important. What does that 15-year-old code do? What
-is the purpose of these new-to-me files? Is that code there for a reason?
+이런 코드베이스에서 작업하는 것은 부담스러울 수 있습니다. 저는 종종 15년 전에 제가 한 번도 만난 적 없는 사람이 마지막으로 수정한 코드를 발견하거나; 심지어 지금도 제가 전혀 알지 못했던 파일과 클래스를 발견하거나; 불필요해 보이지만 중요한 것으로 판명되는 코드를 봅니다. 그 15년 된 코드는 무엇을 하는 걸까요? 이 새로 발견한 파일들의 목적은 무엇일까요? 그 코드는 이유가 있어서 거기 있는 걸까요?
 
-Every browser has thousands of unfixed bugs, from the smallest of mistakes to
-myriad mix ups and mismatches. Every browser must be endlessly tuned and
-optimized to squeeze out that last bit of performance. Every browser requires
-painstaking work to continuously refactor the code to reduce its complexity,
-often through the careful[^browsers-abstraction-hard] introduction of
-modularization and abstraction.
+모든 브라우저에는 수천 개의 미해결 버그가 있습니다. 작은 실수부터 수많은 혼란과 불일치까지 다양합니다. 모든 브라우저는 마지막 성능을 짜내기 위해 끊임없이 조정되고 최적화되어야 합니다. 모든 브라우저는 종종 모듈화와 추상화의 신중한[^browsers-abstraction-hard] 도입을 통해 코드의 복잡성을 줄이기 위해 지속적인 리팩토링 작업이 필요합니다.
 
-[^browsers-abstraction-hard]: Browsers are so performance-sensitive that, in
-many places, merely the introduction of an abstraction---a function call or
-branching overhead---can have an unacceptable performance cost!
+[^browsers-abstraction-hard]: 브라우저는 성능에 매우 민감해서, 많은 곳에서 단순히 추상화의 도입—함수 호출이나 분기 오버헤드—만으로도 받아들일 수 없는 성능 비용이 발생할 수 있습니다!
 
-What makes a browser different from most massive code bases is their _urgency_.
-Browsers are nearly as old as any “legacy” codebase, but are _not_ legacy, not
-abandoned or half-deprecated, not slated for replacement. On the contrary, they
-are vital to the world’s economy. Browser engineers must therefore fix and
-improve rather than abandon and replace. And since the character of the web
-itself is highly decentralized, the use cases met by browsers are to a
-significant extent _not determined_ by the companies “owning” or “controlling” a
-particular browser. Other people---including you---can and do contribute ideas,
-proposals, and implementations.
+대부분의 거대한 코드베이스와 브라우저를 구분 짓는 것은 그 _긴급성_입니다. 브라우저는 거의 모든 "레거시" 코드베이스만큼 오래되었지만, _레거시가 아닙니다_. 버려지거나 반쯤 폐기되지 않았고, 대체될 예정도 아닙니다. 오히려 세계 경제에 필수적입니다. 따라서 브라우저 엔지니어들은 버리고 대체하는 대신 수정하고 개선해야 합니다. 그리고 웹 자체의 특성이 매우 분산되어 있기 때문에, 브라우저가 충족해야 하는 사용 사례는 상당 부분 특정 브라우저를 "소유"하거나 "통제"하는 회사에 의해 _결정되지 않습니다_. 다른 사람들—여러분을 포함해서—이 아이디어, 제안, 구현을 기여할 수 있고 또 그렇게 합니다.
 
-What's amazing is that, despite the scale and the pace and the complexity, there
-is still plenty of room to contribute. Every browser today is open source, which
-opens up its implementation to the whole community of web developers. Browsers
-evolve like giant research projects, where new ideas are constantly being proposed
-and tested out. As you would expect, some features fail and some succeed. The
-ones that succeed end up in specifications and are implemented by other
-browsers. Every web browser is open to contributions---whether
-fixing bugs or proposing new features or implementing promising optimizations.
+놀라운 것은, 이런 규모와 속도와 복잡성에도 불구하고, 여전히 기여할 여지가 많다는 것입니다. 오늘날 모든 브라우저는 오픈 소스이며, 이는 그 구현을 전체 웹 개발자 커뮤니티에 개방합니다. 브라우저는 거대한 연구 프로젝트처럼 진화하며, 새로운 아이디어가 계속해서 제안되고 시험됩니다. 예상하듯이, 일부 기능은 실패하고 일부는 성공합니다. 성공한 것들은 사양에 포함되어 다른 브라우저에서도 구현됩니다. 모든 웹 브라우저는 기여를 받아들입니다—버그를 수정하거나 새로운 기능을 제안하거나 유망한 최적화를 구현하는 것 모두.
 
-And it's worth contributing, because working on web browsers is a lot of fun.
+그리고 기여할 가치가 있습니다. 웹 브라우저 작업은 정말 재미있기 때문입니다.
 
-Browser Code Concepts
+브라우저 코드 개념
 =====================
 
-HTML and CSS are meant to be black boxes---declarative application
-programming interfaces (APIs)---where one
-specifies _what_ outcome to achieve, and the _browser itself_ is
-responsible for figuring out _how_ to achieve it. Web developers
-don't, and mostly can't, draw their web pages' pixels on their own.
+HTML과 CSS는 블랙박스로 설계되었습니다—선언적 애플리케이션 프로그래밍 인터페이스(API)—여기서 어떤 결과를 얻고 싶은지 지정하면, _브라우저 자체가_ 그것을 어떻게 달성할지 알아내는 책임을 집니다. 웹 개발자들은 자신의 웹 페이지 픽셀을 직접 그리지 않고, 대부분 그럴 수도 없습니다.
 
-That can make the browser magical or frustrating---depending on
-whether it is doing the right thing! But that also makes a browser a pretty
-unusual piece of software, with unique challenges, interesting algorithms, and
-clever optimizations. Browsers are worth studying for the pure pleasure of it.
+그것은 브라우저가 올바른 일을 하고 있는지 여부에 따라 마법 같거나 좌절스럽게 만들 수 있습니다! 하지만 그것은 또한 브라우저를 매우 특별한 소프트웨어로 만들며, 고유한 과제, 흥미로운 알고리즘, 영리한 최적화가 필요합니다. 브라우저는 순수한 즐거움을 위해 연구할 가치가 있습니다.
 
-[^loss-of-control]: Loss of control is not necessarily specific to the web---much
-of computing these days relies on mountains of other people's code.
-
-What makes that all work is the web browser's implementations of [inversion of
-control][inversion], [constraint programming][constraints], and
-[declarative programming][declarative]. The web _inverts control_, with an
-intermediary---the browser---handling most of the rendering, and the web
-developer specifying rendering parameters and content to this intermediary.
-[^forms] Further, these parameters usually take the form of _constraints_
-between the relative sizes and positions of on-screen elements instead of
-specifying their values directly;[^constraints] the browser solves the
-constraints to find those values. The same idea applies for actions: web pages
-mostly require _that_ actions take place without specifying _when_ they do.
-This _declarative_ style means that from the point of view of a developer,
-changes "apply immediately", but under the hood, the browser can be
-[lazy] and delay applying the changes until they become externally visible,
-either due to subsequent API calls or because the page has to be displayed to
-the user.[^style-calculation]
+이 모든 것을 가능하게 하는 것은 [제어의 역전][inversion], [제약 프로그래밍][constraints], [선언적 프로그래밍][declarative]에 대한 웹 브라우저의 구현입니다. 웹은 _제어를 역전시켜_, 중개자—브라우저—가 대부분의 렌더링을 처리하고, 웹 개발자는 이 중개자에게 렌더링 매개변수와 콘텐츠를 지정합니다[^forms]. 더 나아가, 이러한 매개변수는 보통 화면상 요소들의 값을 직접 지정하는 대신 상대적 크기와 위치 사이의 _제약_의 형태를 취합니다[^constraints]; 브라우저는 제약을 해결하여 그 값들을 찾습니다. 같은 아이디어가 동작에도 적용됩니다: 웹 페이지는 대부분 동작이 _언제_ 일어나는지 지정하지 않고 동작이 일어나야 _한다는 것_만을 요구합니다. 이 _선언적_ 스타일은 개발자의 관점에서는 변경사항이 "즉시 적용"된다는 것을 의미하지만, 내부적으로는 브라우저가 [게으르게][lazy] 동작하여 후속 API 호출이나 페이지가 사용자에게 표시되어야 하는 경우와 같이 외부적으로 보이게 될 때까지 변경사항 적용을 지연시킬 수 있습니다[^style-calculation].
 
 [inversion]: https://en.wikipedia.org/wiki/Inversion_of_control
 [constraints]: https://en.wikipedia.org/wiki/Constraint_programming
 [declarative]: https://en.wikipedia.org/wiki/Declarative_programming
 [lazy]: https://en.wikipedia.org/wiki/Lazy_evaluation
 
-There are practical reasons for the unusual design of a browser. Yes, developers
-lose some control and agency---when pixels are wrong, developers cannot fix them
-directly.[^loss-of-control] But they gain the ability to deploy content on the
-web without worrying about the details, to make that content instantly available
-on almost every computing device in existence, and to keep it accessible in the
-future, mostly avoiding software's inevitable obsolescence.
+브라우저의 특이한 설계에는 실용적인 이유가 있습니다. 그렇습니다, 개발자들은 일부 제어와 주도권을 잃습니다—픽셀이 잘못되었을 때, 개발자들은 직접 수정할 수 없습니다[^loss-of-control]. 하지만 그들은 세부사항을 걱정하지 않고 웹에 콘텐츠를 배포하고, 그 콘텐츠를 거의 모든 컴퓨팅 기기에서 즉시 사용할 수 있게 만들며, 미래에도 접근 가능하게 유지하여 소프트웨어의 불가피한 구식화를 대부분 피할 수 있는 능력을 얻습니다.
 
-[^forms]: For example, in HTML there are many built-in [form control
-elements][forms] that take care of the various ways the user of a web page can
-provide input. The developer need only specify parameters such as button names,
-sizing, and look-and-feel, or JavaScript extension points to handle form
-submission to the server. The rest of the implementation is taken care of by the
-browser.
+[^forms]: 예를 들어, HTML에는 많은 내장 [폼 컨트롤 요소][forms]가 있어 웹 페이지 사용자가 입력을 제공할 수 있는 다양한 방법을 처리합니다. 개발자는 버튼 이름, 크기 조정, 모양과 느낌, 또는 서버에 폼 제출을 처리하기 위한 JavaScript 확장 포인트와 같은 매개변수만 지정하면 됩니다. 구현의 나머지 부분은 브라우저가 처리합니다.
 
 [forms]: https://developer.mozilla.org/en-US/docs/Learn/Forms/Basic_native_form_controls
 
-[^constraints]: Constraint programming is clearest during web page layout, where
-font and window sizes, desired positions and sizes, and the relative arrangement
-of widgets is rarely specified directly.
+[^constraints]: 제약 프로그래밍은 웹 페이지 레이아웃 중에 가장 명확하게 드러납니다. 여기서 글꼴과 창 크기, 원하는 위치와 크기, 위젯의 상대적 배치는 거의 직접 지정되지 않습니다.
 
-[^style-calculation]: For example, when exactly does the browser
-compute HTML element styles? Any change to the styles is visible to
-all subsequent API calls, so in that sense it applies "immediately".
-But it is better for the browser to delay style recalculation,
-avoiding redundant work if styles change twice in quick succession.
-Maximally exploiting the opportunities afforded by declarative
-programming makes real-world browsers very complex.
+[^style-calculation]: 예를 들어, 브라우저는 정확히 언제 HTML 요소의 스타일을 계산할까요? 스타일에 대한 모든 변경은 모든 후속 API 호출에 보이므로, 그런 의미에서는 "즉시" 적용됩니다. 하지만 스타일이 빠르게 연속해서 두 번 변경되는 경우 중복 작업을 피하기 위해 스타일 재계산을 지연시키는 것이 브라우저에 더 좋습니다. 선언적 프로그래밍이 제공하는 기회를 최대한 활용하면 실제 브라우저가 매우 복잡해집니다.
 
-To me, browsers are where algorithms _come to life_. A browser contains a
-rendering engine more complex and powerful than any computer game; a full
-networking stack; clever data structures and parallel programming techniques; a
-virtual machine, an interpreted language, and a just-in-time compiler; a world-class security
-sandbox; and a uniquely dynamic system for storing data.
+[^loss-of-control]: 제어 상실이 반드시 웹에만 특정된 것은 아닙니다—요즘 컴퓨팅의 대부분은 다른 사람들의 코드 산더미에 의존합니다.
 
-And the truth is---you use a browser all the time, maybe for reading this
-book! That makes the algorithms more approachable in a browser than almost
-anywhere else, because the web is already familiar.
+제게 브라우저는 알고리즘이 _살아나는_ 곳입니다. 브라우저는 어떤 컴퓨터 게임보다 더 복잡하고 강력한 렌더링 엔진을 포함합니다; 완전한 네트워킹 스택; 영리한 데이터 구조와 병렬 프로그래밍 기법; 가상 머신, 인터프리터 언어, 실시간 컴파일러; 세계적 수준의 보안 샌드박스; 그리고 유니크하게 동적인 데이터 저장 시스템을 가지고 있습니다.
 
-The Role of the Browser
+그리고 진실은—여러분은 브라우저를 항상 사용합니다. 아마도 이 책을 읽는 데도 사용하고 있겠죠! 그것은 브라우저의 알고리즘을 거의 다른 어떤 곳보다 더 접근하기 쉽게 만듭니다. 왜냐하면 웹은 이미 친숙하기 때문입니다.
+
+브라우저의 역할
 =======================
 
-The web is at the center of modern computing.
-Every year the web expands its reach to more and more of what we do with
-computers. It now goes far beyond its original use for document-based
-information sharing: many people now spend their entire day in a browser, not
-using a single other application! Moreover, desktop applications are now often
-built and delivered as _web apps_: web pages loaded by a browser but used like
-installed applications.[^pwa] Even on mobile devices, apps often embed a browser
-to render parts of the application user interface (UI).[^hybrid] Perhaps in the future both
-desktop and mobile devices will largely be containers for web apps. Already,
-browsers are a critical and indispensable part of computing.
+웹은 현대 컴퓨팅의 중심에 있습니다. 매년 웹은 우리가 컴퓨터로 하는 일의 더 많은 부분으로 확장되고 있습니다. 이제 원래의 문서 기반 정보 공유 용도를 훨씬 넘어섰습니다: 많은 사람들이 이제 다른 애플리케이션을 전혀 사용하지 않고 하루 종일 브라우저에서 시간을 보냅니다! 더욱이, 데스크톱 애플리케이션은 이제 종종 _웹 앱_으로 구축되고 제공됩니다: 브라우저가 로드하지만 설치된 애플리케이션처럼 사용되는 웹 페이지입니다[^pwa]. 모바일 기기에서도 앱은 종종 애플리케이션 사용자 인터페이스(UI)의 일부를 렌더링하기 위해 브라우저를 임베드합니다[^hybrid]. 아마도 미래에는 데스크톱과 모바일 기기 모두 대부분 웹 앱을 위한 컨테이너가 될 것입니다. 이미 브라우저는 컴퓨팅의 중요하고 필수불가결한 부분입니다.
 
-[^pwa]: Related to the notion of a web app is a Progressive Web App, which is a
-web app that becomes indistinguishable from a native app through [progressive
-enhancement][prog-enhance-def].
+[^pwa]: 웹 앱과 관련된 개념은 프로그레시브 웹 앱입니다. 이는 [점진적 향상][prog-enhance-def]을 통해 네이티브 앱과 구분할 수 없게 되는 웹 앱입니다.
 
-[^hybrid]: The fraction of such "hybrid" apps that are shown via a "web view" is
-    likely increasing over time. In some markets like China, "super-apps" act
-    like a mobile web browser for web-view-based games and widgets.
-    
-So given this centrality, it's worth knowing how the web works. And in
-particular, it's worth focusing on the browser, which is the user
-agent[^useragent] and the mediator of the web's interactions, which
-ultimately is what makes the web's principles real. The browser is also the
-_implementer_ of the web: its sandbox keeps web browsing safe; its algorithms
-implement the declarative document model; its UI navigates links. Web pages
-load fast and react smoothly only when the browser is hyper-efficient.
+[^hybrid]: "하이브리드" 앱 중 "웹뷰"를 통해 보여지는 비율이 시간이 지남에 따라 증가할 것 같습니다. 중국과 같은 일부 시장에서는 "슈퍼앱"이 웹뷰 기반 게임과 위젯을 위한 모바일 웹 브라우저처럼 작동합니다.
 
-[^useragent]: The user agent concept views a computer, or software within the
-    computer, as a trusted assistant and advocate of the human user.
+[prog-enhance-def]: https://en.wikipedia.org/wiki/Progressive_enhancement
 
-Browsers and You
+따라서 이런 중심성을 고려할 때, 웹이 어떻게 작동하는지 아는 것은 가치가 있습니다. 그리고 특히, 웹의 상호작용을 중재하는 사용자 에이전트[^useragent]이자 중재자인 브라우저에 초점을 맞추는 것이 중요합니다. 결국 웹의 원칙을 현실로 만드는 것이 바로 브라우저입니다. 브라우저는 또한 웹의 _구현자_이기도 합니다: 샌드박스로 웹 브라우징의 안전을 지키고; 알고리즘으로 선언적 문서 모델을 구현하며; UI로 링크를 탐색합니다. 웹 페이지가 빠르게 로드되고 부드럽게 반응하는 것은 브라우저가 초고효율적일 때만 가능합니다.
+
+[^useragent]: 사용자 에이전트 개념은 컴퓨터, 또는 컴퓨터 내의 소프트웨어를 인간 사용자의 신뢰받는 조수이자 대변인으로 봅니다.
+
+브라우저와 당신
 ================
 
-This book explains how to build a simple browser, one that can---despite its
-simplicity---display interesting-looking web pages and support many interesting
-behaviors. As you’ll see, it’s surprisingly easy, and it
-demonstrates all the core concepts you need to understand a real-world browser.
-The browser stops being a mystery when it becomes code.
+이 책은 간단한 브라우저를 만드는 방법을 설명합니다. 간단함에도 불구하고 이 브라우저는 흥미로운 모양의 웹 페이지를 표시하고 많은 흥미로운 동작을 지원할 수 있습니다. 보시다시피 놀라울 정도로 쉽고, 실제 브라우저를 이해하는 데 필요한 모든 핵심 개념을 보여줍니다. 브라우저가 코드가 되면 더 이상 미스터리가 아닙니다.
 
-[prog-enhance-def]:
-https://en.wikipedia.org/wiki/Progressive_enhancement
+이 책의 목적은 여러분이 초기 장을 읽어가면서 자신만의 브라우저를 만들도록 하는 것입니다. 브라우저가 작동하기 시작하면 연습문제로 제안된 것들 중 일부를 포함하여 성능을 개선하거나 기능을 추가할 수 있는 무한한 기회가 있습니다. 이러한 연습문제 중 많은 것들이 실제 브라우저에서 구현된 기능들이며, 여러분이 직접 시도해보시기를 권합니다—기능을 추가하는 것은 브라우저 개발의 가장 좋은 부분 중 하나입니다!
 
-The intention is for you to build your own browser as you work through the early
-chapters. Once it is up and running, there are endless opportunities to improve
-performance or add features, some of which are suggested as exercises. Many of
-these exercises are features implemented in real browsers, and I encourage you
-to try them---adding features is one of the best parts of browser development!
+그런 다음 이 책은 Chrome에서의 제 경험을 바탕으로 실제 브라우저의 렌더링 엔진 아키텍처를 구체화하는 세부사항과 고급 기능으로 넘어갑니다. 이 책을 끝내고 나면, 여러분은 Chromium, Gecko, 또는 WebKit의 소스 코드를 파고들어 큰 어려움 없이 이해할 수 있을 것입니다.
 
-The book then moves on to details and advanced features that flesh out the
-architecture of a real browser’s rendering engine, based on my experiences with
-Chrome. After finishing the book, you should be able to dig into the source code
-of Chromium, Gecko, or WebKit and understand it without too much trouble.
-
-I hope the book lets you appreciate a browser's depth, complexity, and power. I
-hope the book passes along a browser's beauty---its clever algorithms and data
-structures, its co-evolution with the culture and history of computing, its
-centrality in our world. But most of all, I hope the book lets you see in
-yourself someone building the browser of the future.
+이 책을 통해 여러분이 브라우저의 깊이, 복잡성, 그리고 힘을 이해하게 되기를 바랍니다. 브라우저의 아름다움—영리한 알고리즘과 데이터 구조, 컴퓨팅의 문화와 역사와의 공진화, 우리 세계에서의 중심성—을 느끼실 수 있기를 바랍니다. 하지만 무엇보다도, 이 책을 통해 여러분 스스로가 미래의 브라우저를 만드는 사람이 될 수 있다는 것을 깨닫기를 바랍니다.

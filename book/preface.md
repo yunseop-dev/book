@@ -1,121 +1,57 @@
 ---
-title: Preface
-type: Preface
+title: 서문
+type: 서문
 next: intro
 ...
 
-A computer science degree traditionally includes courses in operating
-systems, compilers, and databases that replace mystery with code.
-These courses transform Linux, Postgres, and LLVM into improvements,
-additions, and optimizations of an understandable core architecture.
-The lesson transcends the specific system studied: _all_ computer
-systems, no matter how big and seemingly complex, can be studied and
-understood.
+컴퓨터 과학 학위 과정에는 전통적으로 운영체제, 컴파일러, 데이터베이스와 같은 과목이 포함됩니다. 이 과목들은 미지의 영역을 코드로 대체하며, Linux, Postgres, LLVM 같은 시스템을 이해 가능한 핵심 아키텍처의 개선, 추가, 최적화를 통해 설명합니다. 여기서의 교훈은 특정 시스템을 넘어서 있습니다. _모든_ 컴퓨터 시스템은 얼마나 크고 복잡해 보이든 간에 연구하고 이해할 수 있다는 것입니다.
 
-But web browsers are still opaque, not just to students but to
-industry programmers and even to researchers. This book dissipates
-that mystery by systematically explaining all major components of a
-modern web browser.
+하지만 웹 브라우저는 여전히 학생들뿐만 아니라 업계 프로그래머와 연구자에게도 불투명한 영역으로 남아 있습니다. 이 책은 현대 웹 브라우저의 주요 구성 요소를 체계적으로 설명하여 그 신비를 없애는 데 목적이 있습니다.
 
-Reading This Book
+책 읽기 가이드
 =================
 
-Parts 1--3 of this book construct a basic browser weighing in at around
-1000 lines of code, twice that after exercises. The average chapter
-takes 4--6 hours to read, implement, and debug for someone with a few
-years' programming experience. Part 4 of this book covers advanced
-topics; those chapters are longer and have more code. The final
-browser weighs in at about 3000 lines.
+이 책의 1~3부에서는 약 1000줄 정도의 코드를 통해 기본 브라우저를 구축합니다. 연습 문제를 포함하면 코드 양은 두 배로 늘어납니다. 몇 년간의 프로그래밍 경험이 있는 독자라면 평균적으로 각 장을 읽고, 구현하고, 디버깅하는 데 4~6시간이 걸릴 것입니다. 책의 4부에서는 고급 주제들을 다루며, 이 장들은 더 길고 코드량도 많습니다. 최종적으로 브라우저는 약 3000줄 이상의 코드를 갖게 될 것입니다.
 
-Your browser[^yours-ours] will "work" at each step of the way, and
-every chapter will build upon the last.[^jrwilcox-idea] That way, you will
-also practice growing and improving complex software. If you feel
-particularly interested in some component, please do flesh it out,
-complete the exercises, and add missing features. We've tried to
-arrange it so that this doesn't make later chapters more difficult.
+여러분의 브라우저[^yours-ours]는 매 단계에서 "작동"하게 될 것이며, 각 장은 이전 장의 내용을 기반으로 구축됩니다.[^jrwilcox-idea] 이를 통해 복잡한 소프트웨어를 성장시키고 개선하는 연습도 할 수 있습니다. 특정 구성 요소에 흥미를 느낀다면, 연습 문제를 완성하거나 누락된 기능을 추가해 보세요. 우리는 이를 통해 나머지 장들이 더 어려워지지 않도록 배치하려고 노력했습니다.
 
-[^yours-ours]: This book assumes that you will be building a web browser along
-the way while reading it. However, it does present nearly
-all the code---inlined into the book---for a working browser for every
-chapter. So most of the time, the book uses the term "our browser",
-which refers to the conceptual browser we (you and us, the
-authors) have built so far. In cases where the book is referring specifically
-to the implementation you have built, the book says "your browser".
+[^yours-ours]: 이 책은 독자들이 책을 읽는 동안 웹 브라우저를 직접 구축할 것을 가정합니다. 하지만 작동 가능한 브라우저의 거의 모든 코드를 책에 포함해 제공합니다. 따라서 대부분의 경우, 책은 "우리의 브라우저"라는 용어를 사용하며, 이는 저자와 독자가 함께 구축한 개념적인 브라우저를 의미합니다. 책에서 독자가 구현한 특정 구현체를 지칭할 경우 "여러분의 브라우저"라는 표현을 사용합니다.
 
-[^jrwilcox-idea]: This idea is from [J. R. Wilcox][jrw], inspired in
-turn by [S. Zdancewic's][sz] course on compilers.
+[^jrwilcox-idea]: 이 아이디어는 [J. R. Wilcox][jrw]로부터 비롯되었으며, 이는 다시 [S. Zdancewic][sz]의 컴파일러 강좌에서 영감을 받았습니다.
 
-The code in this book uses [Python 3](https://browserbook.substack.com/p/why-python),\index{Python} and we recommend you follow
-along in the same. When the book shows Python command lines, it calls
-the Python binary `python3`.[^py3-cmd] That said, the text avoids
-dependencies where possible and you can try to follow along in another
-language. Make sure your language has libraries for TLS connections
-(Python has one built in), graphics (the text uses Tk, Skia, and SDL),
-and JavaScript evaluation (the text uses DukPy).
-    
-[^py3-cmd]: This is for clarity. On some operating systems, `python`
-means Python 3, but on others that means Python 2. Check which version
-you have!
+이 책의 코드는 [Python 3](https://browserbook.substack.com/p/why-python)을 사용하며,\index{Python} 동일한 언어로 따라갈 것을 권장합니다. 책에서 제공하는 명령 줄 예제는 `python3` 이진 파일을 사용합니다.[^py3-cmd] 그러나 텍스트는 가능한 한 의존성을 피하려고 하며, 다른 언어로 따라가고자 한다면 TLS 연결, 그래픽(이 책에서는 Tk, Skia, SDL을 사용), JavaScript 평가(이 책에서는 DukPy를 사용) 라이브러리가 있는지 확인하세요.
+
+[^py3-cmd]: 이는 명확성을 위한 것입니다. 일부 운영체제에서는 `python`이 Python 3을 의미하지만, 다른 경우 Python 2를 의미할 수 있습니다. 사용 중인 버전을 확인하세요!
 
 [sz]: https://www.cis.upenn.edu/~stevez/
 
-This book's browser is irreverent toward standards: it handles only a
-sliver of the full HTML, CSS, and JavaScript languages, mishandles
-errors, and isn't resilient to malicious inputs. It is also quite
-slow. Despite that, its architecture matches that of real browsers,
-providing insight into those 10 million line of code behemoths.
+이 책의 브라우저는 표준에 대해 엄격하지 않습니다. HTML, CSS, JavaScript 언어의 일부만 다루며, 오류를 잘못 처리하거나 악의적인 입력에 대해 안전하지 않습니다. 속도도 느립니다. 그럼에도 불구하고, 이 브라우저의 아키텍처는 실제 브라우저와 유사하며, 1천만 줄이 넘는 코드로 이루어진 거대 소프트웨어에 대한 통찰력을 제공합니다.
 
-That said, we've tried to explicitly note when the book's browser
-simplifies or diverges from standards. If you're not sure how your
-browser should behave in some edge case, fire up your favorite web
-browser and try it out.
+책의 브라우저가 표준을 간소화하거나 탈피하는 경우, 이를 명시적으로 언급하려고 노력했습니다. 일부 경계 사례에서 브라우저가 어떻게 작동해야 할지 확실하지 않다면 즐겨 사용하는 웹 브라우저를 실행하여 확인해 보세요.
 
-Acknowledgments
-===============
+# 감사의 글
 
-We'd like to recognize the countless people who built the web and the
-various web browsers. They are wonders of the modern world. Thank you!
-We learned a lot from the books and articles listed in this book's
-[bibliography](bibliography.md)---thank you to their authors. And
-we're especially grateful to the many contributors to articles on
-Wikipedia (especially those on historic software, formats, and
-protocols). We are grateful for this amazing resource, one which in
-turn was made possible by the very thing this book is about.
+저자들은 웹 및 다양한 웹 브라우저를 구축한 수많은 사람들에게 감사를 표합니다. 이들은 현대의 경이로움이라 할 수 있습니다. 우리는 책의 [참고문헌](bibliography.md)에 나열된 책과 기사들을 통해 많은 것을 배웠습니다. 그 저자들에게 감사드립니다. 또한, 특히 역사적인 소프트웨어, 형식, 프로토콜에 대한 Wikipedia의 많은 기여자들께도 감사드립니다. 이는 이 책의 주제인 웹 덕분에 가능해진 놀라운 자원입니다.
 
-*Pavel*: [James R. Wilcox][jrw] and I dreamed up this book during a
-late-night chat at ICFP 2018. [Max Willsey][mwillsey] proofread and
-helped sequence the chapters. [Zach Tatlock][ztatlock] encouraged me
-to develop the book into a course. And the students of CS 6968,
-CS 4962, and CS 4560 at the University of Utah found countless errors and suggested
-important simplifications. I am thankful to all of them. Most of all,
-I am thankful to my wife [Sara][saras], who supported my writing and
-gave me the strength to finish this many-year-long project.
+**Pavel**: [James R. Wilcox][jrw]와 함께 2018년 ICFP에서 늦은 밤 대화를 나누며 이 책의 아이디어를 구상했습니다. [Max Willsey][mwillsey]는 초안을 검토하고 챕터 순서를 개선하는 데 도움을 주었습니다. [Zach Tatlock][ztatlock]은 이 책을 강의로 발전시키도록 격려했습니다. 유타대학교 CS 6968, CS 4962, CS 4560 강의를 들은 학생들은 수많은 오류를 찾고 중요한 단순화 방법을 제안해 주었습니다. 모두에게 감사드립니다. 특히 제 아내 [Sara][saras]에게 이 오랜 프로젝트를 마무리할 수 있도록 지지와 힘을 주셔서 감사합니다.
 
 [mwillsey]: https://www.mwillsey.com/
+
 [saras]: https://www.sscharmingds.com/
+
 [ztatlock]: https://homes.cs.washington.edu/~ztatlock/
+
 [jrw]: https://jamesrwilcox.com
 
-*Chris*: I am eternally grateful to my wife Sara for patiently
-listening to my endless musings about the web, and encouraging me to
-turn my idea for a browser book into reality. I am also grateful to
-[Dan Gildea][dan-gildea] for providing feedback on my browser-book
-concept on multiple occasions. Finally, I'm grateful to Pavel for
-doing the hard work of getting this project off the ground and allowing
-me to join the adventure. (Turns out Pavel and I had the same idea!)
+**Chris**: 웹과 관련된 저의 끝없는 생각을 참을성 있게 들어주고, 브라우저 책에 대한 아이디어를 현실로 만들도록 격려해 준 아내 Sara에게 진심으로 감사드립니다. 또한, 브라우저 책 개념에 대한 피드백을 여러 차례 제공해준 [Dan Gildea][dan-gildea]에게 감사드립니다. 마지막으로, 이 프로젝트를 시작하고 제가 이 여정에 참여할 수 있도록 해준 Pavel에게 감사합니다. (알고 보니 Pavel과 저는 같은 아이디어를 갖고 있었네요!)
 
 [dan-gildea]: https://www.cs.rochester.edu/u/gildea/
 
 ::: {.web-only}
 
-A final note
-============
+# 마지막으로
 
-This book is, and will remain, a work in progress. Please leave
-comments and mark typos; the book has built-in feedback tools, which
-you can enable with `Ctrl-E` (or `Cmd-E` on a Mac). The full source
-code is also available [on GitHub][github], though we prefer to
-receive comments through the built-in tools.
+이 책은 진행 중인 작업으로 남을 것입니다. 댓글을 남기고 오타를 수정해주세요. 이 책에는 내장된 피드백 도구가 있습니다. `Ctrl-E`(Mac에서는 `Cmd-E`)를 사용해 활성화할 수 있습니다. 전체 소스 코드는 [GitHub][github]에서도 확인할 수 있지만, 내장 도구를 통해 댓글을 남겨주시면 더욱 좋습니다.
 
 [github]: https://github.com/browserengineering/book
 
